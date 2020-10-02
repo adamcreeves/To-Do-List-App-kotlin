@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ToDoListApp</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="confirm_your_password">Confirm Your Password</string>
+    <string name="submit_registration">Submit Registration</string>
+    <string name="already_registered"><![CDATA[Already Registered? ->]]></string>
+    <string name="login_here">Login Here</string>
+    <string name="enter_your_email_address">Enter Your Email Address</string>
+    <string name="adam_s_to_do_list_n_registration">Adam\'s To Do List \n Registration</string>
+    <string name="adam_s_to_do_list_n_login">Adam\'s To Do List \n Login</string>
+    <string name="submit_login">Submit Login</string>
+    <string name="new_user"><![CDATA[New User? ->]]></string>
+    <string name="register_here">Register Here</string>
+    <string name="adam_s_n_to_do_list_home">ADAM\'S\n TO DO LIST: Home</string>
 </resources>
