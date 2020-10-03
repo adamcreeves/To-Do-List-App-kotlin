@@ -1,0 +1,50 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent"
+    android:padding="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:id="@+id/button_mark_task_complete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/ic_baseline_done_outline_24" />
+
+    <Button android:layout_height="25dp"
+        android:layout_width="25dp"
+        android:background="@drawable/ic_baseline_done_24"
+        android:visibility="invisible"
+        />
+
+
+    <TextView
+        android:id="@+id/text_view_row_task_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_name"
+        android:layout_marginLeft="35dp"
+        android:textSize="20sp"
+        android:layout_marginStart="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status"
+        android:textSize="20sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="100dp" />
+
+    <TextView
+        android:id="@+id/text_view_row_task_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status"
+        android:textSize="20sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp" />
+
+</RelativeLayout>

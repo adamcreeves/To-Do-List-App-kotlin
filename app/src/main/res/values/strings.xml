@@ -11,5 +11,10 @@
     <string name="submit_login">Submit Login</string>
     <string name="new_user"><![CDATA[New User? ->]]></string>
     <string name="register_here">Register Here</string>
-    <string name="adam_s_n_to_do_list_home">ADAM\'S\n TO DO LIST: Home</string>
+    <string name="adam_s_n_to_do_list_home">Your TO DOs:</string>
+    <string name="name_of_new_task">Name of New Task</string>
+    <string name="description_of_new_task">Description of New Task</string>
+    <string name="add_new_task">Add New Task</string>
+    <string name="status">Status:</string>
+    <string name="task_name">Task Name</string>
 </resources>
