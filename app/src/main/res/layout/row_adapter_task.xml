@@ -7,14 +7,14 @@
 
     <Button
         android:id="@+id/button_mark_task_complete"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:background="@drawable/ic_baseline_done_outline_24" />
 
     <ImageView
         android:id="@+id/image_view_completed_task"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_alignStart="@id/button_mark_task_complete"
         android:layout_alignLeft="@id/button_mark_task_complete"
         android:background="@drawable/ic_baseline_done_24"
@@ -25,15 +25,17 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/ic_baseline_cancel_24"/>
+        android:background="@drawable/ic_baseline_cancel_24" />
 
     <TextView
         android:id="@+id/text_view_row_task_name"
         android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:text="@string/task_name"
+        android:textStyle="bold"
         android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 
@@ -42,7 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_row_task_name"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:text="@string/description"
         android:textColor="@color/colorWhite" />
 
@@ -52,10 +55,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
         android:text="@string/status"
         android:textColor="@color/colorWhite"
-        android:textSize="15sp"
-        android:layout_marginRight="120dp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/text_view_status"
