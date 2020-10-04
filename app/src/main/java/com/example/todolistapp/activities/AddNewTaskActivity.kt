@@ -19,6 +19,9 @@ class AddNewTaskActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        button_add_task_back.setOnClickListener{
+            finish()
+        }
         button_add_task_submit.setOnClickListener {
             var taskName = edit_text_task_name.text.toString()
             var taskDescription = edit_text_task_description.text.toString()

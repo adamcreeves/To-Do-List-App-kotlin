@@ -23,17 +23,17 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
         button_register_submit.setOnClickListener{
-            var email = edit_text_register_email.text.toString()
-            var password = edit_text_register_password.text.toString()
-            var confirm_password = edit_text_register_confirm_password.text.toString()
-            if(password == confirm_password) {
+            val email = edit_text_register_email.text.toString()
+            val password = edit_text_register_password.text.toString()
+            val confirm_password = edit_text_register_confirm_password.text.toString()
+            if(!(password != confirm_password && email == "")) {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this
                     ) { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(applicationContext, "Registration Successful", Toast.LENGTH_SHORT)
                                 .show()
-                            startActivity(Intent(applicationContext, LoginActivity::class.java))
+                            finish()
                         } else {
                             Toast.makeText(applicationContext, "Email already registered", Toast.LENGTH_SHORT)
                                 .show()
@@ -43,7 +43,6 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Your passwords don't match", Toast.LENGTH_SHORT)
                     .show()
             }
-            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
     }

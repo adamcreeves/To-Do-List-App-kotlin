@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -18,13 +19,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        button_login_to_register.setOnClickListener{
+        button_login_to_register.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
-        button_login_submit.setOnClickListener{
+        button_login_submit.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
-            var email = edit_text_login_email.text.toString()
-            var password = edit_text_login_password.text.toString()
+            val email = edit_text_login_email.text.toString()
+            val password = edit_text_login_password.text.toString()
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                     this
@@ -35,7 +36,32 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(Intent(applicationContext, MainActivity::class.java))
                         finish()
                     } else {
-                        Toast.makeText(applicationContext, "User or Password Incorrect", Toast.LENGTH_SHORT)
+                        Toast.makeText(
+                            applicationContext,
+                            "User or Password Incorrect",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+                    }
+                }
+        }
+        button_login_reset_password.setOnClickListener {
+            val email = edit_text_login_email.text.toString()
+            auth.sendPasswordResetEmail(email)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(
+                            applicationContext,
+                            "Email Sent to Reset Password",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+                    } else {
+                        Toast.makeText(
+                            applicationContext,
+                            "You Didn't Enter a Registered Email",
+                            Toast.LENGTH_SHORT
+                        )
                             .show()
                     }
                 }

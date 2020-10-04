@@ -10,14 +10,23 @@ import com.google.firebase.auth.FirebaseAuth
 class SplashActivity : AppCompatActivity() {
     private val delayTime: Long = 2500
     lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        var handler = Handler()
         auth = FirebaseAuth.getInstance()
-        handler.postDelayed({
-            startActivity(Intent(this, LoginActivity::class.java))
-        }, delayTime)
+        init()
+    }
 
+    private fun init() {
+        val handler = Handler()
+        val user = auth.currentUser
+        handler.postDelayed({
+            if(user != null) {
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }, delayTime)
     }
 }

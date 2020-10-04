@@ -6,6 +6,17 @@
     android:background="@color/colorPrimaryDark"
     android:padding="10dp">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_home_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_baseline_first_page_24"
+        android:backgroundTint="@color/colorAccent"
+        app:maxImageSize="@android:dimen/app_icon_size"
+        tools:ignore="VectorDrawableCompat" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,16 +25,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
             android:gravity="center_horizontal"
             android:text="@string/adam_s_n_to_do_list_home"
             android:textColor="@color/colorWhite"
             android:textSize="50sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:layout_marginEnd="10dp" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_main"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -35,10 +49,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="30dp"
+        android:layout_margin="20dp"
         app:fabSize="normal"
         app:srcCompat="@drawable/ic_baseline_add_circle_outline_24"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorAccent"
         app:maxImageSize="@android:dimen/app_icon_size"
         tools:ignore="VectorDrawableCompat" />
 

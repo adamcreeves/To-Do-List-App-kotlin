@@ -20,4 +20,12 @@
     <string name="description">Description</string>
     <string name="incomplete">Incomplete</string>
     <string name="adam_s_n_to_do_list">ADAM\'S\n TO DO LIST:</string>
+    <string name="go_go_do_do">Go-Go Do-Do</string>
+    <string name="your_2020_todo_list_app">Your 2020 ToDo List App</string>
+    <string name="login">Login</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="register">Register</string>
+    <string name="go_go_do_do_nregistration">Go-Go Do-Do\nRegistration</string>
+    <string name="go_go_do_do_login">Go-Go Do-Do\nLogin</string>
+    <string name="add">Add</string>
 </resources>

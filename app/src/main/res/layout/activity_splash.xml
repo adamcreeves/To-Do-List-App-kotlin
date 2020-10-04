@@ -7,9 +7,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="80dp"
         android:gravity="center_horizontal"
-        android:text="Go-Go Do-Do"
+        android:text="@string/go_go_do_do"
         android:textColor="@color/colorWhite"
         android:textSize="60sp"
         android:textStyle="italic" />
@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="130dp"
-        android:text="Your 2020 ToDo List App"
+        android:layout_marginBottom="120dp"
+        android:text="@string/your_2020_todo_list_app"
         android:textColor="@color/colorWhite"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 </RelativeLayout>
