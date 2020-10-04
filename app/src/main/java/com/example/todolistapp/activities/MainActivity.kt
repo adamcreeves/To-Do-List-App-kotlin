@@ -3,6 +3,7 @@ package com.example.todolistapp.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todolistapp.R
 import com.example.todolistapp.adapters.AdapterTasks
@@ -11,10 +12,11 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var databaseReference: DatabaseReference
+    private lateinit var databaseReference: DatabaseReference
     var mList: ArrayList<Task> = ArrayList()
     var keyList: ArrayList<String> = ArrayList()
     var adapterTasks: AdapterTasks? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,12 +25,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        getData()
+        adapterTasks = AdapterTasks(this, mList, keyList)
+        recycler_view_main.layoutManager = LinearLayoutManager(this)
+        recycler_view_main.adapter = adapterTasks
         button_home_add_task.setOnClickListener {
             startActivity(Intent(this, AddNewTaskActivity::class.java))
-            getData()
-            adapterTasks = AdapterTasks(this, mList, keyList)
-            recycler_view_main.layoutManager = LinearLayoutManager(this)
-            recycler_view_main.adapter = adapterTasks
         }
     }
 
@@ -44,9 +46,15 @@ class MainActivity : AppCompatActivity() {
                 }
                 adapterTasks?.setData(mList)
             }
-            override fun onCancelled(error: DatabaseError) {
 
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(
+                    applicationContext,
+                    "An Error occurred retrieving the data",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+
 
         })
     }

@@ -17,4 +17,6 @@
     <string name="add_new_task">Add New Task</string>
     <string name="status">Status:</string>
     <string name="task_name">Task Name</string>
+    <string name="description">Description</string>
+    <string name="incomplete">Incomplete</string>
 </resources>

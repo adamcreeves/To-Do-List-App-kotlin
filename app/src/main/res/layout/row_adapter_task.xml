@@ -1,8 +1,9 @@
-<RelativeLayout android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorAccent"
-    android:padding="15dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_margin="5dp"
+    android:background="@color/colorPrimary"
+    android:padding="10dp">
 
     <Button
         android:id="@+id/button_mark_task_complete"
@@ -10,41 +11,62 @@
         android:layout_height="25dp"
         android:background="@drawable/ic_baseline_done_outline_24" />
 
-    <Button android:layout_height="25dp"
+    <ImageView
+        android:id="@+id/image_view_completed_task"
         android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignStart="@id/button_mark_task_complete"
+        android:layout_alignLeft="@id/button_mark_task_complete"
         android:background="@drawable/ic_baseline_done_24"
-        android:visibility="invisible"
-        />
+        android:visibility="invisible" />
 
+    <Button
+        android:id="@+id/button_delete_task"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_baseline_cancel_24"/>
 
     <TextView
         android:id="@+id/text_view_row_task_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/task_name"
+        android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
-        android:textSize="20sp"
-        android:layout_marginStart="35dp" />
+        android:text="@string/task_name"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_view_row_task_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_row_task_name"
+        android:layout_marginLeft="35dp"
+        android:text="@string/description"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/status"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="100dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="100dp" />
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="120dp"
+        android:text="@string/status"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        android:layout_marginRight="120dp" />
 
     <TextView
-        android:id="@+id/text_view_row_task_status"
+        android:id="@+id/text_view_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/status"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp" />
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/incomplete"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
 
 </RelativeLayout>

@@ -22,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
         button_login_submit.setOnClickListener{
+            startActivity(Intent(this, MainActivity::class.java))
             var email = edit_text_login_email.text.toString()
             var password = edit_text_login_password.text.toString()
             auth.signInWithEmailAndPassword(email, password)

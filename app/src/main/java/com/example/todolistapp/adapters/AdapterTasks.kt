@@ -3,6 +3,8 @@ package com.example.todolistapp.adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -25,8 +27,8 @@ class AdapterTasks(
     }
 
     override fun onBindViewHolder(holder: mViewHolder, position: Int) {
-        var user = mList[position]
-        holder.bind(user, position)
+        var task = mList[position]
+        holder.bind(task, position)
     }
 
     override fun getItemCount(): Int {
@@ -40,12 +42,24 @@ class AdapterTasks(
 
     inner class mViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(task: Task, position: Int) {
-            itemView.text_view_row_task_name.text = task.taskName
-            itemView.text_view_row_task_status.text = task.status
+            var switch = true
+            itemView.text_view_row_task_name.setText(task.taskName.toString())
+            itemView.text_view_row_task_description.setText(task.taskDescription.toString())
             itemView.button_mark_task_complete.setOnClickListener{
-                var databaseReference = FirebaseDatabase.getInstance().getReference("tasks")
-                databaseReference.child(keyList[position]).setValue(Task(task.taskName, task.taskDescription, "Complete"))
-                Toast.makeText(mContext, "User updated successfully", Toast.LENGTH_SHORT).show()
+                if(switch){
+                    itemView.image_view_completed_task.visibility = VISIBLE
+                    itemView.text_view_status.text = "Complete"
+                    switch = false
+                } else {
+                    itemView.image_view_completed_task.visibility = INVISIBLE
+                    itemView.text_view_status.text = "Incomplete"
+                    switch = true
+                }
+            }
+            itemView.button_delete_task.setOnClickListener{
+                var databaseReference = FirebaseDatabase.getInstance().getReference("users")
+                databaseReference.child(keyList[position]).setValue(null)
+                Toast.makeText(mContext, "Task deleted", Toast.LENGTH_SHORT).show()
             }
         }
     }
