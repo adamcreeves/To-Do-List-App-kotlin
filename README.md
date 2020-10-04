@@ -7,7 +7,7 @@ App Screenshots:
 Splash screen:                        Login screen:
 
 [![Screen Shot 2020-10-04 at 1.52.43 PM](https://i.imgur.com/CWApxNz.png)]
-[!(Screen Shot 2020-10-04 at 1.38.12 PM)(https://i.imgur.com/0slb5nQ.png)]
+[![Screen Shot 2020-10-04 at 1.38.12 PM](https://i.imgur.com/0slb5nQ.png)]
 
 
 Home screen:                          Registration screen:
