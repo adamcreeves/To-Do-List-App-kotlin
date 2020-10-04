@@ -1,5 +1,6 @@
 package com.example.todolistapp.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -22,12 +23,12 @@ class AdapterTasks(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): mViewHolder {
-        var view = LayoutInflater.from(mContext).inflate(R.layout.row_adapter_task, parent, false)
+        val view = LayoutInflater.from(mContext).inflate(R.layout.row_adapter_task, parent, false)
         return mViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: mViewHolder, position: Int) {
-        var task = mList[position]
+        val task = mList[position]
         holder.bind(task, position)
     }
 
@@ -41,10 +42,12 @@ class AdapterTasks(
     }
 
     inner class mViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        @SuppressLint("SetTextI18n")
         fun bind(task: Task, position: Int) {
             var switch = true
-            itemView.text_view_row_task_name.setText(task.taskName.toString())
-            itemView.text_view_row_task_description.setText(task.taskDescription.toString())
+            val databaseReference = FirebaseDatabase.getInstance().getReference("tasks")
+            itemView.text_view_row_task_name.text = task.taskName.toString()
+            itemView.text_view_row_task_description.text = task.taskDescription.toString()
             itemView.button_mark_task_complete.setOnClickListener{
                 if(switch){
                     itemView.image_view_completed_task.visibility = VISIBLE
@@ -57,7 +60,6 @@ class AdapterTasks(
                 }
             }
             itemView.button_delete_task.setOnClickListener{
-                var databaseReference = FirebaseDatabase.getInstance().getReference("users")
                 databaseReference.child(keyList[position]).setValue(null)
                 Toast.makeText(mContext, "Task deleted", Toast.LENGTH_SHORT).show()
             }
