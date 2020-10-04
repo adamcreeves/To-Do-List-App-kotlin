@@ -1,17 +1,33 @@
-<RelativeLayout android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="@color/colorPrimaryDark">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADAM'S\n TO DO LIST: SPLASH LOGO!"
-        android:textSize="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
         android:gravity="center_horizontal"
-        android:textStyle="italic"
+        android:text="Go-Go Do-Do"
+        android:textColor="@color/colorWhite"
+        android:textSize="60sp"
+        android:textStyle="italic" />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_centerInParent="true"
-        android:textColor="@color/colorWhite"/>
+        android:src="@drawable/ic_baseline_directions_run_24" />
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:text="Your 2020 ToDo List App"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 </RelativeLayout>

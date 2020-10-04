@@ -19,4 +19,5 @@
     <string name="task_name">Task Name</string>
     <string name="description">Description</string>
     <string name="incomplete">Incomplete</string>
+    <string name="adam_s_n_to_do_list">ADAM\'S\n TO DO LIST:</string>
 </resources>

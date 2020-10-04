@@ -8,7 +8,7 @@ import com.example.todolistapp.R
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
-    private val delayTime: Long = 2000
+    private val delayTime: Long = 2500
     lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
