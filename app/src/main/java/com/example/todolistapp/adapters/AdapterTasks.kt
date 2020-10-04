@@ -60,6 +60,7 @@ class AdapterTasks(
                 }
             }
             itemView.button_delete_task.setOnClickListener{
+                val databaseReference = FirebaseDatabase.getInstance().getReference("tasks")
                 databaseReference.child(keyList[position]).setValue(null)
                 Toast.makeText(mContext, "Task deleted", Toast.LENGTH_SHORT).show()
             }

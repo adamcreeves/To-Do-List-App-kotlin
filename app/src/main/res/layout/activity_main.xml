@@ -1,6 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimaryDark"
     android:padding="10dp">
 
@@ -18,13 +20,7 @@
             android:textColor="@color/colorWhite"
             android:textSize="50sp"
             android:textStyle="italic" />
-        <Button
-            android:id="@+id/button_home_add_task"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="right"
-            android:text="@string/add_new_task" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_main"
@@ -33,6 +29,17 @@
 
     </LinearLayout>
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_home_add_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30dp"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_baseline_add_circle_outline_24"
+        android:backgroundTint="@color/colorPrimary"
+        app:maxImageSize="@android:dimen/app_icon_size"
+        tools:ignore="VectorDrawableCompat" />
 
 </RelativeLayout>
