@@ -38,9 +38,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="15dp"
-                android:text="@string/add_new_task"
+                android:text="@string/ready_to_go_do_it"
                 android:textColor="@color/colorWhite"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:textStyle="italic" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -50,7 +50,7 @@
                 android:background="@color/colorWhite"
                 android:hint="@string/name_of_new_task"
                 android:paddingTop="5dp">
-            
+
                 <EditText
                     android:id="@+id/edit_text_task_name"
                     android:layout_width="match_parent"

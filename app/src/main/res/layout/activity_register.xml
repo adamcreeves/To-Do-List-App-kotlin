@@ -27,9 +27,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:text="@string/go_go_do_do_nregistration"
+                android:text="Go-do-it Registration"
                 android:textColor="@color/colorWhite"
                 android:textSize="35sp"
+                android:layout_marginBottom="10dp"
                 android:textStyle="italic" />
 
             <com.google.android.material.textfield.TextInputLayout

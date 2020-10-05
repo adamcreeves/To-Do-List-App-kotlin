@@ -28,4 +28,8 @@
     <string name="go_go_do_do_nregistration">Go-Go Do-Do\nRegistration</string>
     <string name="go_go_do_do_login">Go-Go Do-Do\nLogin</string>
     <string name="add">Add</string>
+    <string name="go_do_it">Go-do-it</string>
+    <string name="go_do_it_list">Go-do-it List</string>
+    <string name="ready_to_go_do_it">Ready to Go-do-it?</string>
+    <string name="go_do_it_login">Go-do-it Login</string>
 </resources>

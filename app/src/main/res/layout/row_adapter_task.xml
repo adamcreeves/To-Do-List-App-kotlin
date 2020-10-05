@@ -55,7 +55,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:textStyle="italic"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:text="@string/description"
         android:textColor="@color/colorWhite" />
 

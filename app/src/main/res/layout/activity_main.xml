@@ -28,11 +28,12 @@
             android:layout_gravity="right"
             android:layout_marginRight="10dp"
             android:gravity="center_horizontal"
-            android:text="@string/adam_s_n_to_do_list_home"
+            android:text="@string/go_do_it_list"
             android:textColor="@color/colorWhite"
             android:textSize="50sp"
             android:textStyle="italic"
-            android:layout_marginEnd="10dp" />
+            android:layout_marginEnd="10dp"
+            tools:ignore="RtlHardcoded" />
 
 
         <androidx.recyclerview.widget.RecyclerView
