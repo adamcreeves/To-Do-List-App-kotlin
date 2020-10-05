@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun dialogLogout() {
-        var builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this)
         builder.setTitle("Confirm Log Out")
         builder.setMessage("Are you sure you want to log out?")
         builder.setNegativeButton("No", object : DialogInterface.OnClickListener {

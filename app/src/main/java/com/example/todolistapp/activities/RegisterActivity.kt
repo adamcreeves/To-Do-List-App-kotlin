@@ -26,7 +26,9 @@ class RegisterActivity : AppCompatActivity() {
             val email = edit_text_register_email.text.toString()
             val password = edit_text_register_password.text.toString()
             val confirm_password = edit_text_register_confirm_password.text.toString()
-            if(!(password != confirm_password && email == "")) {
+            if(email == "" || password == "" || confirm_password == ""){
+                Toast.makeText(this, "You need to fill in all the text fields", Toast.LENGTH_SHORT).show()
+            } else if(password == confirm_password) {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this
                     ) { task ->
@@ -43,7 +45,6 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Your passwords don't match", Toast.LENGTH_SHORT)
                     .show()
             }
-            finish()
         }
     }
 }

@@ -23,48 +23,54 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
         button_login_submit.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
             val email = edit_text_login_email.text.toString()
             val password = edit_text_login_password.text.toString()
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(
-                    this
-                ) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
-                            .show()
-                        startActivity(Intent(applicationContext, MainActivity::class.java))
-                        finish()
-                    } else {
-                        Toast.makeText(
-                            applicationContext,
-                            "User or Password Incorrect",
-                            Toast.LENGTH_SHORT
-                        )
-                            .show()
+            if(email == "" || password == ""){
+                Toast.makeText(this, "You need to fill in email and password", Toast.LENGTH_SHORT).show()
+            } else {
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(
+                        this
+                    ) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
+                                .show()
+                            startActivity(Intent(applicationContext, MainActivity::class.java))
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                applicationContext,
+                                "User or Password Incorrect",
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                        }
                     }
-                }
+            }
         }
         button_login_reset_password.setOnClickListener {
             val email = edit_text_login_email.text.toString()
-            auth.sendPasswordResetEmail(email)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(
-                            applicationContext,
-                            "Email Sent to Reset Password",
-                            Toast.LENGTH_SHORT
-                        )
-                            .show()
-                    } else {
-                        Toast.makeText(
-                            applicationContext,
-                            "You Didn't Enter a Registered Email",
-                            Toast.LENGTH_SHORT
-                        )
-                            .show()
+            if (email == "")
+                Toast.makeText(this, "You need to enter your registered email first", Toast.LENGTH_SHORT).show()
+            else
+                auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                applicationContext,
+                                "Email Sent to Reset Password",
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                        } else {
+                            Toast.makeText(
+                                applicationContext,
+                                "You Didn't Enter a Registered Email",
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                        }
                     }
-                }
         }
     }
 }
