@@ -6,6 +6,13 @@
     android:background="@color/colorPrimaryDark"
     android:padding="10dp">
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_home_logout"
         android:layout_width="wrap_content"

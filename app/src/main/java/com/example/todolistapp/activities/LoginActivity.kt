@@ -25,15 +25,20 @@ class LoginActivity : AppCompatActivity() {
         button_login_submit.setOnClickListener {
             val email = edit_text_login_email.text.toString()
             val password = edit_text_login_password.text.toString()
-            if(email == "" || password == ""){
-                Toast.makeText(this, "You need to fill in email and password", Toast.LENGTH_SHORT).show()
+            if (email == "" || password == "") {
+                Toast.makeText(this, "You need to fill in email and password", Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(
                         this
                     ) { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
+                            Toast.makeText(
+                                applicationContext,
+                                "Login Successful",
+                                Toast.LENGTH_SHORT
+                            )
                                 .show()
                             startActivity(Intent(applicationContext, MainActivity::class.java))
                             finish()
@@ -51,7 +56,11 @@ class LoginActivity : AppCompatActivity() {
         button_login_reset_password.setOnClickListener {
             val email = edit_text_login_email.text.toString()
             if (email == "")
-                Toast.makeText(this, "You need to enter your registered email first", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "You need to enter your registered email first",
+                    Toast.LENGTH_SHORT
+                ).show()
             else
                 auth.sendPasswordResetEmail(email)
                     .addOnCompleteListener(this) { task ->
