@@ -32,4 +32,6 @@
     <string name="go_do_it_list">Go-do-it List</string>
     <string name="ready_to_go_do_it">Ready to Go-do-it?</string>
     <string name="go_do_it_login">Go-do-it Login</string>
+    <string name="app_logo">App logo</string>
+    <string name="go_do_it_registration">Go-do-it Registration</string>
 </resources>

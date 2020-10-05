@@ -27,7 +27,8 @@
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/ic_baseline_directions_run_24" />
+        android:src="@drawable/ic_baseline_directions_run_24"
+        android:contentDescription="@string/app_logo" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,4 +40,5 @@
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold" />
+
 </RelativeLayout>
