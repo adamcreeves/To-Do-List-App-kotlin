@@ -22,11 +22,8 @@ class SplashActivity : AppCompatActivity() {
         val handler = Handler()
         val user = auth.currentUser
         handler.postDelayed({
-            if(user != null) {
-                startActivity(Intent(this, MainActivity::class.java))
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
-            }
+            if(user != null) startActivity(Intent(this, MainActivity::class.java))
+            else startActivity(Intent(this, LoginActivity::class.java))
         }, delayTime)
     }
 }

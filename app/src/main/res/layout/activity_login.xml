@@ -24,20 +24,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
                 android:gravity="center_horizontal"
                 android:text="@string/go_do_it_login"
                 android:textColor="@color/colorWhite"
                 android:textSize="35sp"
-                android:layout_marginBottom="10dp"
                 android:textStyle="italic" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:paddingTop="5dp"
                 android:background="@color/colorWhite"
-                android:hint="@string/enter_your_email_address">
+                android:hint="@string/enter_your_email_address"
+                android:paddingTop="5dp">
 
                 <EditText
                     android:id="@+id/edit_text_login_email"
@@ -54,9 +54,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:paddingTop="5dp"
                 android:background="@color/colorWhite"
-                android:hint="@string/enter_your_password">
+                android:hint="@string/enter_your_password"
+                android:paddingTop="5dp">
 
                 <EditText
                     android:id="@+id/edit_text_login_password"
@@ -120,8 +120,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@color/colorWhite"
             android:padding="13dp"
             android:text="@string/register_here"
