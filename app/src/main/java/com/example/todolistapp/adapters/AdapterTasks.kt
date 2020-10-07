@@ -59,12 +59,13 @@ class AdapterTasks(
             itemView.button_mark_task_complete.setOnClickListener {
                 if (status == "incomplete") {
                     itemView.image_view_completed_task.visibility = VISIBLE
-                    itemView.text_view_status.text = "complete"
                     databaseReference.child(keyList[position]).setValue(Task(task.taskName, task.taskDescription, "complete"))
+                    itemView.text_view_status.text = task.status
+
                 } else {
                     itemView.image_view_completed_task.visibility = INVISIBLE
-                    itemView.text_view_status.text = "incomplete"
                     databaseReference.child(keyList[position]).setValue(Task(task.taskName, task.taskDescription, "incomplete"))
+                    itemView.text_view_status.text = task.status
                 }
             }
             itemView.button_delete_task.setOnClickListener {
