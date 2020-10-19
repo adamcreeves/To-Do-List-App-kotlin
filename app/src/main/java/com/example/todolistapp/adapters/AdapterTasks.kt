@@ -24,7 +24,6 @@ class AdapterTasks(
     private var keyList: ArrayList<String>
 ) :
     RecyclerView.Adapter<AdapterTasks.mViewHolder>() {
-    private lateinit var firebaseDatabase: FirebaseDatabase
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): mViewHolder {
         val view = LayoutInflater.from(mContext).inflate(R.layout.row_adapter_task, parent, false)
@@ -59,13 +58,13 @@ class AdapterTasks(
             itemView.button_mark_task_complete.setOnClickListener {
                 if (status == "incomplete") {
                     itemView.image_view_completed_task.visibility = VISIBLE
-                    databaseReference.child(keyList[position]).setValue(Task(task.taskName, task.taskDescription, "complete"))
-                    itemView.text_view_status.text = task.status
+                    databaseReference.child(keyList[position]).child("status").setValue("complete")
+
 
                 } else {
                     itemView.image_view_completed_task.visibility = INVISIBLE
-                    databaseReference.child(keyList[position]).setValue(Task(task.taskName, task.taskDescription, "incomplete"))
-                    itemView.text_view_status.text = task.status
+                    databaseReference.child(keyList[position]).child("status").setValue("incomplete")
+
                 }
             }
             itemView.button_delete_task.setOnClickListener {
